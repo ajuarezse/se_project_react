@@ -14,7 +14,7 @@ function ModalWithForm() {
           />
         </button>
         <form className="modal__form">
-          <label htmlFor="name" className="modal__label">
+          <label htmlFor="name" className="modal__label modal__label_text">
             Name{""}
             <input
               type="text"
@@ -23,7 +23,7 @@ function ModalWithForm() {
               placeholder="Name"
             />
           </label>
-          <label htmlFor="imageURL" className="modal__label">
+          <label htmlFor="imageURL" className="modal__label modal__label_text">
             Image{""}
             <input
               type="text"
