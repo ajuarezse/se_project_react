@@ -8,6 +8,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function App() {
   const [weatherData, setWeatherData] = useState({ type: "hot" });
+  const [activeModal, setActiveModal] = useState("t");
 
   return (
     <div className="page">
@@ -16,7 +17,11 @@ function App() {
         <Main weatherData={weatherData} />
         <Footer />
       </div>
-      <ModalWithForm title="New garment" buttonText="Add garment">
+      <ModalWithForm
+        title="New garment"
+        buttonText="Add garment"
+        activeModal={activeModal}
+      >
         <label htmlFor="name" className="modal__label modal__label_text">
           Name{""}
           <input

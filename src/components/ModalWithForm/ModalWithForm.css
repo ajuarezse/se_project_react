@@ -9,6 +9,11 @@
   justify-content: center;
   align-items: center;
   font-family: "CabinetGrotesk", sans-serif;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
 }
 
 .modal__title {
