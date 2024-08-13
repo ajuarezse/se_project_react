@@ -17,7 +17,7 @@ function App() {
   });
 
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState("");
+  const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
