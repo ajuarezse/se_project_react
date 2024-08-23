@@ -1,6 +1,7 @@
 .switch {
   display: flex;
   position: relative;
+  align-items: center;
 }
 
 .switch__box {
@@ -26,4 +27,5 @@
 }
 
 .switch__slider-C {
+  right: 22px;
 }

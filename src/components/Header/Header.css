@@ -14,6 +14,17 @@
   margin-right: 24px;
 }
 
+.header__logo-date {
+  flex: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header__avatar-logo {
+  display: flex;
+  align-items: center;
+}
+
 .header__date-and-location {
   margin: 0;
   font-weight: 700;
