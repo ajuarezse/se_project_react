@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ToggleSwitch.css";
+//import { PluginContainer } from "vite";
 
 const ToggleSwitch = () => {
   const [currentTemperatureUnit, handleToggleSwitchChange] = useState("C");
@@ -19,8 +20,20 @@ const ToggleSwitch = () => {
             : "switch__slider switch__slider-C"
         }
       ></span>
-      <p>F</p>
-      <p>C</p>
+      <p
+        className={`switch__temp-F ${
+          currentTemperatureUnit === "F" && "switch__active"
+        }`}
+      >
+        F
+      </p>
+      <p
+        className={`switch__temp-C ${
+          currentTemperatureUnit === "C" && "switch__active"
+        }`}
+      >
+        C
+      </p>
     </label>
   );
 };

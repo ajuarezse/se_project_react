@@ -7,15 +7,15 @@
 .switch__box {
   border-radius: 25px;
   border: 2px solid black;
-  width: 50px;
-  height: 30px;
+  width: 56px;
+  height: 28px;
   appearance: none;
 }
 
 .switch__slider {
   border-radius: 20px;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   background-color: black;
   color: white;
   text-align: center;
@@ -27,5 +27,19 @@
 }
 
 .switch__slider-C {
-  right: 22px;
+  left: 26px;
+}
+
+.switch__active {
+  color: white;
+}
+
+.switch__temp-C {
+  position: absolute;
+  right: 18px;
+}
+
+.switch__temp-F {
+  position: relative;
+  right: 46px;
 }
