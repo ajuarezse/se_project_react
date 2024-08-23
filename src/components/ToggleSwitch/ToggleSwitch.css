@@ -2,14 +2,29 @@
   display: flex;
   position: relative;
   align-items: center;
+  cursor: pointer;
+  width: 56px;
+  height: 28px;
+  font-family: "CabinetGrotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.switch__box:hover {
+  border-color: black;
+}
+
+.switch:hover .switch__slider-F {
+  width: 30px;
 }
 
 .switch__box {
   border-radius: 25px;
-  border: 2px solid black;
-  width: 56px;
-  height: 28px;
+  border: 2px solid #7e7e7e;
+  width: 100%;
+  height: 100%;
   appearance: none;
+  cursor: pointer;
 }
 
 .switch__slider {
@@ -19,15 +34,16 @@
   background-color: black;
   color: white;
   text-align: center;
-  cursor: pointer;
   position: absolute;
+  transition: width 0.5s ease, left 0.5s ease;
 }
 
 .switch__slider-F {
+  left: 0;
 }
 
 .switch__slider-C {
-  left: 26px;
+  left: 20px;
 }
 
 .switch__active {
@@ -36,10 +52,12 @@
 
 .switch__temp-C {
   position: absolute;
-  right: 18px;
+  right: 17px;
+  pointer-events: none;
 }
 
 .switch__temp-F {
   position: relative;
-  right: 46px;
+  right: 38px;
+  pointer-events: none;
 }
