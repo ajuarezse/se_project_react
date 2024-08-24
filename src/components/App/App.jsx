@@ -34,7 +34,10 @@ function App() {
     setActiveModal("");
   };
 
-  const handleToggleSwitchChange = () => {};
+  const handleToggleSwitchChange = () => {
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
+    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  };
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -44,7 +47,7 @@ function App() {
       })
       .catch(console.error);
   }, []);
-
+  console.log(CurrentTemperatureUnitContext);
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
