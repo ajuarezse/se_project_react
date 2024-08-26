@@ -43,19 +43,29 @@ function App() {
     getWeather(coordinates, APIkey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
+        //console.log(filteredData.temp.F);
         setWeatherData(filteredData);
       })
       .catch(console.error);
   }, []);
-  console.log(CurrentTemperatureUnitContext);
+  //console.log(CurrentTemperatureUnitContext);
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="page__content">
-          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-          <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+          <Header
+            handleAddClick={handleAddClick}
+            weatherData={weatherData}
+            currentTemperatureUnit={currentTemperatureUnit}
+            handleToggleSwitchChange={handleToggleSwitchChange}
+          />
+          <Main
+            weatherData={weatherData}
+            handleCardClick={handleCardClick}
+            currentTemperatureUnit={currentTemperatureUnit}
+          />
           <Footer />
         </div>
         <ModalWithForm
