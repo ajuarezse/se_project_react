@@ -4,23 +4,23 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 # Key features include:
 
-- **Clothing Cards**: Dynamically generated from a hard-coded array of data.
+- 👕 **Clothing Cards**: Dynamically generated from a hard-coded array of data.
 
-- **Weather API Integration**: Fetches and parsing data from a weather API to display real-time weather information.
+- ☁️ **Weather API Integration**: Fetches and parsing data from a weather API to display real-time weather information.
 
-- **Event Handling**: Implementing interactive modals for adding new garments and viewing garment details.
+- 🖱️ **Event Handling**: Implementing interactive modals for adding new garments and viewing garment details.
 
-- **State Management**: Using React's state management to store and update temperature and location data.
+- 🔄 **State Management**: Using React's state management to store and update temperature and location data.
 
 # Technologies and Tools used:
 
-- **React**: Leveraging React's component-based architecture for efficient UI development.
+- ⚛️ **React**: Leveraging React's component-based architecture for efficient UI development.
 
-- **Vite**: Used for the fast and efficient build process.
+- ⚡ **Vite**: Used for the fast and efficient build process.
 
-- **JavaScript (ES6+)**: Core language used in the project.
+- 💻 **JavaScript (ES6+)**: Core language used in the project.
 
-- **CSS**: Custom styling based on a provided Figma design.
+- 🎨 **CSS**: Custom styling based on a provided Figma design.
 
 ## Check out the live project here: [WTWR Live Demo](https://ajuarezse.github.io/se_project_react/).
 
