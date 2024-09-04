@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -61,11 +62,20 @@ function App() {
             currentTemperatureUnit={currentTemperatureUnit}
             handleToggleSwitchChange={handleToggleSwitchChange}
           />
-          <Main
-            weatherData={weatherData}
-            handleCardClick={handleCardClick}
-            currentTemperatureUnit={currentTemperatureUnit}
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  handleCardClick={handleCardClick}
+                  currentTemperatureUnit={currentTemperatureUnit}
+                />
+              }
+            />
+            <Route path="/profile" element={<p>PROFILE</p>} />
+          </Routes>
+
           <Footer />
         </div>
         <ModalWithForm
