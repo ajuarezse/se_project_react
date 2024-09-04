@@ -1,14 +1,15 @@
 import ItemCard from "../ItemCard/ItemCard";
 import { defaultClothingItems } from "../../utils/constants";
+import "./ClothesSection.css";
 
 function ClothesSection() {
   return (
     <div className="clothes-section">
-      <div>
-        <p>Your items</p>
-        <button>+ Add New</button>
+      <div className="clothes__header">
+        <p className="clothes__section-title">Your Items</p>
+        <button className="clothes__section-add-button">+ Add New</button>
       </div>
-      <ul className="cards__list">
+      <ul className="clothes-section-items">
         {defaultClothingItems.map((item) => {
           return (
             <ItemCard
