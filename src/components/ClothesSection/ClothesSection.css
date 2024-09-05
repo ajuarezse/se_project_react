@@ -1,7 +1,4 @@
 .clothes-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-items: start;
 }
 
 .clothes__header {
@@ -10,9 +7,10 @@
 }
 
 .clothes__section-title {
-  width: 94px;
   font-family: "CabinetGrotesk-Bold", Times, serif;
   font-size: 20px;
+  line-height: 24.8px;
+  font-weight: 700;
 }
 
 .clothes__section-add-button {
@@ -23,6 +21,8 @@
   margin: 20px;
   padding: 0;
   cursor: pointer;
+  font-weight: 700;
+  line-height: 24.8px;
 }
 
 .clothes-section-items {
