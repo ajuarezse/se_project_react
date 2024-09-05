@@ -2,7 +2,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import { defaultClothingItems } from "../../utils/constants";
 import "./ClothesSection.css";
 
-function ClothesSection() {
+function ClothesSection({ handleCardClick }) {
   return (
     <div className="clothes-section">
       <div className="clothes__header">
@@ -16,7 +16,7 @@ function ClothesSection() {
               key={item._id}
               item={item}
               //TODO - pass as prop
-              //onCardClick={handleCardClick}
+              onCardClick={handleCardClick}
             />
           );
         })}
