@@ -1,3 +1,7 @@
 .profile {
   display: flex;
 }
+
+.profile__clothing-items {
+  margin-left: 116px;
+}

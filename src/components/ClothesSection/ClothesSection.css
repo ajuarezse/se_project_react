@@ -1,5 +1,4 @@
 .clothes-section {
-  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-items: start;
@@ -33,5 +32,6 @@
   list-style-type: none;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: space-between;
   /* margin: 176px 0 124px 385px; */
 }
