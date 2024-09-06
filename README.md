@@ -26,4 +26,4 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 ---
 
-This project was part of an assignment to create and style the front-end components for the WTWR app using React. I plan to expand this project with additional features and functionalities. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
+I plan to expand this project with additional features and functionalities. I'd like to add form validation and configure a responsive design. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
