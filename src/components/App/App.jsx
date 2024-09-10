@@ -99,7 +99,7 @@ function App() {
           <Footer />
         </div>
         <AddItemModal
-          handleCloseModal={closeActiveModal}
+          onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
           onAddItem={onAddItem}
         />
