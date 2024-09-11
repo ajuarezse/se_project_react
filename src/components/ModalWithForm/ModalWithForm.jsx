@@ -3,7 +3,7 @@ import closeButton from "../../assets/closeButton.png";
 
 function ModalWithForm({
   children,
-  buttonText = "add garment",
+  buttonText = "Add garment",
   title,
   isOpen,
   onClose,

@@ -39,9 +39,9 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (e) => {
-    console.log(e);
-  };
+  function onAddItem(values /*{ name, weather, imageUrl }*/) {
+    console.log(values);
+  }
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -59,13 +59,13 @@ function App() {
   }, []);
   //console.log(CurrentTemperatureUnitContext);
 
-  useEffect(() => {
+  /*useEffect(() => {
     getItems()
       .then((data) => {
         console.log(data);
       })
       .catch(console.error);
-  }, []);
+  }, []);*/
 
   return (
     <div className="page">
