@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001"; // Ensure there's a trailing slash if needed
+const baseUrl = "http://localhost:3001";
 
 function getItems() {
   return fetch(`${baseUrl}/posts`).then((res) => {

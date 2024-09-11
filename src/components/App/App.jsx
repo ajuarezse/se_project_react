@@ -25,6 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, seClothingItems] = useState("");
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -41,7 +42,12 @@ function App() {
 
   function onAddItem(values /*{ name, weather, imageUrl }*/) {
     console.log(values);
+    //handleAddItemSubmit();
   }
+
+  const handleAddItemSubmit = () => {
+    getItems();
+  };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
