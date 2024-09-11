@@ -12,7 +12,7 @@ import Profile from "../Profile/Profile";
 //import AddItemModal from "../AddItemModal/AddItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { getItems } from "../../utils/api";
+import { getItems, addItem } from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 
 function App() {
@@ -40,13 +40,17 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemSubmit = (item) => {
-    getItems([item, ...clothingItems]);
+  const handleAddItemSubmit = (item, resetForm) => {
+    addItem(item).then((newItem) => {
+      getItems([item, ...clothingItems]);
+      closeActiveModal();
+      //resetForm();
+    });
   };
 
   function onAddItem(values /*{ name, weather, imageUrl }*/) {
     console.log(values);
-    handleAddItemSubmit();
+    handleAddItemSubmit(values);
     closeActiveModal();
   }
 

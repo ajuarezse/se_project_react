@@ -8,7 +8,7 @@ function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-function addItem({ name, imageUrl, weather }) {
+/*function addItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -16,5 +16,20 @@ function addItem({ name, imageUrl, weather }) {
     },
   });
 }
+*/
 
-export { getItems };
+function addItem({ name, imageUrl, weather }) {
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      imageUrl,
+      weather,
+    }),
+  }).then(checkResponse);
+}
+
+export { getItems, addItem };
