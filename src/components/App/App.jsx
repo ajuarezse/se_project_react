@@ -25,7 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [clothingItems, seClothingItems] = useState("");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -40,14 +40,15 @@ function App() {
     setActiveModal("");
   };
 
+  const handleAddItemSubmit = (item) => {
+    getItems([item, ...clothingItems]);
+  };
+
   function onAddItem(values /*{ name, weather, imageUrl }*/) {
     console.log(values);
-    //handleAddItemSubmit();
+    handleAddItemSubmit();
+    closeActiveModal();
   }
-
-  const handleAddItemSubmit = () => {
-    getItems();
-  };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -65,13 +66,14 @@ function App() {
   }, []);
   //console.log(CurrentTemperatureUnitContext);
 
-  /*useEffect(() => {
+  useEffect(() => {
     getItems()
       .then((data) => {
+        setClothingItems(data);
         console.log(data);
       })
       .catch(console.error);
-  }, []);*/
+  }, []);
 
   return (
     <div className="page">
@@ -90,6 +92,7 @@ function App() {
               path="/"
               element={
                 <Main
+                  clothingItems={clothingItems}
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
                   currentTemperatureUnit={currentTemperatureUnit}
@@ -98,7 +101,12 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile handleCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
             />
           </Routes>
 
