@@ -34,5 +34,7 @@
 .modal__weather {
   margin-top: 12px;
 }
-.modal__close_image {
+
+.modal__delete {
+  color: #ff4d00;
 }

@@ -16,6 +16,7 @@ function ItemModal({ activeModal, onClose, card }) {
         <div className="modal__footer">
           <p className="modal__caption">{card.name}</p>
           <p className="modal__weather">Weather: {card.weather}</p>
+          <p className="modal__delete">Delete Item</p>
         </div>
       </div>
     </div>
