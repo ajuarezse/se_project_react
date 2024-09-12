@@ -40,12 +40,22 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemSubmit = (item, resetForm) => {
+  /*const handleAddItemSubmit = (item, resetForm) => {
     addItem(item).then((newItem) => {
       getItems([item, ...clothingItems]);
       closeActiveModal();
       //resetForm();
     });
+  };*/
+
+  const handleAddItemSubmit = (item, resetForm) => {
+    addItem(item)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]); // Update clothingItems with the new item
+        closeActiveModal();
+        resetForm(); // Reset the form after submission
+      })
+      .catch(console.error);
   };
 
   function onAddItem(values /*{ name, weather, imageUrl }*/) {
