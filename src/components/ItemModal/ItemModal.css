@@ -41,4 +41,6 @@
   cursor: pointer;
   height: 25px;
   margin: 0px;
+  border: none;
+  background-color: transparent;
 }
