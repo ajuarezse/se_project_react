@@ -27,4 +27,5 @@
   border: 1px;
   border-color: rgba(0, 0, 0, 0.3);
   gap: 20px;
+  max-height: 326px;
 }
