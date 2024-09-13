@@ -3,7 +3,7 @@ import closeButton from "../../assets/closeButton.png";
 
 function ItemModal({ activeModal, onClose, card, onDelete }) {
   const handleDelete = () => {
-    onDelete(card.id);
+    onDelete(card._id);
   };
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
