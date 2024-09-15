@@ -93,7 +93,6 @@ function App() {
           <Header
             handleAddClick={handleAddClick}
             weatherData={weatherData}
-            currentTemperatureUnit={currentTemperatureUnit}
             handleToggleSwitchChange={handleToggleSwitchChange}
           />
           <Routes>
@@ -104,7 +103,6 @@ function App() {
                   clothingItems={clothingItems}
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
-                  currentTemperatureUnit={currentTemperatureUnit}
                 />
               }
             />
