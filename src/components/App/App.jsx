@@ -38,21 +38,15 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemSubmit = (item, resetForm) => {
+  const handleAddItemSubmit = (item /*resetForm*/) => {
     addItem(item)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
-        resetForm(); // Reset the form after submission
+        //resetForm(); // Reset the form after submission
       })
       .catch(console.error);
   };
-
-  function onAddItem(values, resetForm /*{ name, weather, imageUrl }*/) {
-    console.log(values);
-    handleAddItemSubmit(values, resetForm);
-    closeActiveModal();
-  }
 
   const handleDeleteItem = (id) => {
     deleteItem(id)
@@ -131,7 +125,7 @@ function App() {
         <AddItemModal
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
-          onAddItem={onAddItem}
+          onAddItem={handleAddItemSubmit}
         />
         <ItemModal
           activeModal={activeModal}

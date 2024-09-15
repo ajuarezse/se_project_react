@@ -107,6 +107,12 @@
       "imageUrl": "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "weather": "warm",
       "_id": 21
+    },
+    {
+      "name": "suit",
+      "imageUrl": "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "weather": "warm",
+      "_id": 22
     }
   ]
 }
