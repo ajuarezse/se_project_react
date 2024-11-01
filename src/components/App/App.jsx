@@ -12,6 +12,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { getItems, addItem, deleteItem } from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -122,7 +123,7 @@ function App() {
         </div>
         <AddItemModal
           onClose={closeActiveModal}
-          isOpen={activeModal === "add-garment"}
+          //isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
         />
         <ItemModal
@@ -131,6 +132,12 @@ function App() {
           onClose={closeActiveModal}
           onDelete={handleDeleteItem}
         />
+        <RegisterModal
+          onClose={closeActiveModal}
+          // dont forget to remove comment out from add item modal
+          // isopen condition temp to allow styling
+          isOpen={activeModal === "add-garment"}
+        ></RegisterModal>
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );
