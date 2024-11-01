@@ -8,8 +8,19 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
   const [avatar, setAvatarUrl] = useState("");
 
   const handleEmailChange = (e) => {
-    console.log(e.target.value);
     setUserEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setUserPassword(e.target.value);
+  };
+
+  const handleNameChange = (e) => {
+    setUserName(e.target.value);
+  };
+
+  const handleAvatarChange = (e) => {
+    setAvatarUrl(e.target.value);
   };
 
   const newUser = {
@@ -66,6 +77,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           className="modal__input"
           placeholder="Password"
           value={userPassWord}
+          onChange={handlePasswordChange}
         />
       </label>
       <label htmlFor="name">
@@ -84,7 +96,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         <input
           type="url"
           id="avatar"
-          name="link"
+          name="avatar"
           placeholder="Avatar URL"
           value={avatar}
         />
