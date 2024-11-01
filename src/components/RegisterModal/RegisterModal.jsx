@@ -89,6 +89,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           className="modal__input"
           placeholder="Name"
           value={userName}
+          onChange={handleNameChange}
         />
       </label>
       <label htmlFor="avatar">
@@ -99,6 +100,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           name="avatar"
           placeholder="Avatar URL"
           value={avatar}
+          onChange={handleAvatarChange}
         />
       </label>
     </ModalWithForm>
