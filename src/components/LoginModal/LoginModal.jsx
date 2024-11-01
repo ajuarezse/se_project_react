@@ -23,6 +23,17 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     onLogin(user);
   };
 
+  function resetForm() {
+    setUserEmail("");
+    setUserPassword("");
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      resetForm();
+    }
+  }, [isOpen]);
+
   return (
     <ModalWithForm
       title="Log In"
