@@ -24,6 +24,19 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
     onSignUp(newUser);
   };
 
+  function resetForm() {
+    setUserEmail("");
+    setUserName("");
+    setUserPassword("");
+    setAvatarUrl("");
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      resetForm();
+    }
+  }, [isOpen]);
+
   return (
     <ModalWithForm
       title="Sign Up"
@@ -46,10 +59,36 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
       </label>
       <label htmlFor="password">
         Password*
-        <input type="password" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          className="modal__input"
+          placeholder="Password"
+          value={userPassWord}
+        />
       </label>
-      <label htmlFor="name">Name*</label>
-      <label htmlFor="avatar">Avatar URL*</label>
+      <label htmlFor="name">
+        Name*
+        <input
+          type="text"
+          name="name"
+          id="name"
+          className="modal__input"
+          placeholder="Name"
+          value={userName}
+        />
+      </label>
+      <label htmlFor="avatar">
+        Avatar URL*
+        <input
+          type="url"
+          id="avatar"
+          name="link"
+          placeholder="Avatar URL"
+          value={avatar}
+        />
+      </label>
     </ModalWithForm>
   );
 };
