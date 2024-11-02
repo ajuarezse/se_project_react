@@ -23,28 +23,30 @@ function Header({ isLoggedIn, username, handleAddClick, weatherData }) {
       </div>
       <div className="header__avatar-logo">
         <ToggleSwitch />
-        <button
-          onClick={handleAddClick}
-          type="button"
-          className="header__add-clothes-btn"
-        >
-          + Add Clothes
-        </button>
 
         {isLoggedIn ? (
-          <Link to="/profile" className="header__link">
-            <div className="header__user-container">
-              <p className="header__username">{username}</p>
-              <img src={avatar} alt="avatar" className="header__avatar" />
-            </div>
-          </Link>
+          <>
+            <button
+              onClick={handleAddClick}
+              type="button"
+              className="header__add-clothes-btn"
+            >
+              + Add Clothes
+            </button>
+            <Link to="/profile" className="header__link">
+              <div className="header__user-container">
+                <p className="header__username">{username}</p>
+                <img src={avatar} alt="avatar" className="header__avatar" />
+              </div>
+            </Link>
+          </>
         ) : (
           <div className="header__auth-buttons">
-            <Link to="/login" className="header__auth_link">
-              Log In
-            </Link>
-            <Link to="/signup" className="header__auth_link">
+            <Link to="/signup" className="header__auth-link">
               Sign Up
+            </Link>
+            <Link to="/login" className="header__auth-link">
+              Log In
             </Link>
           </div>
         )}
