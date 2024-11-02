@@ -15,7 +15,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   };
 
   const handlePasswordChange = (e) => {
-    setUserPassword(e.target.vaule);
+    setUserPassword(e.target.value);
   };
 
   const handleSubmit = (e) => {

@@ -13,6 +13,7 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { getItems, addItem, deleteItem } from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -25,6 +26,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  // set up isLoggedIn state
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -123,7 +125,7 @@ function App() {
         </div>
         <AddItemModal
           onClose={closeActiveModal}
-          //isOpen={activeModal === "add-garment"}
+          isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
         />
         <ItemModal
@@ -134,10 +136,12 @@ function App() {
         />
         <RegisterModal
           onClose={closeActiveModal}
-          // dont forget to remove comment out from add item modal
-          // isopen condition temp to allow styling
-          isOpen={activeModal === "add-garment"}
-        ></RegisterModal>
+          isOpen={activeModal === "register"}
+        />
+        <LoginModal
+          onClose={closeActiveModal}
+          //isOpen={activeModal === "add-garment"}
+        />
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );
