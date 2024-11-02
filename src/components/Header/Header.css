@@ -59,11 +59,11 @@
   color: #000;
 }
 
-.header__auth-buttons {
-  color: #000;
-}
-
 .header__auth-link {
   color: #000;
   text-decoration: none;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.8px;
 }
