@@ -1,4 +1,5 @@
 const baseUrl = "http://localhost:3001";
+import { checkResponse } from "./api";
 
 export const signup = (name, avatar, password, email) => {
   return fetch(`${baseUrl}/signup`, {
@@ -8,9 +9,7 @@ export const signup = (name, avatar, password, email) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, avatar, password, email }),
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 };
 
 export const signin = (email, password) => {
@@ -21,7 +20,5 @@ export const signin = (email, password) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 };
