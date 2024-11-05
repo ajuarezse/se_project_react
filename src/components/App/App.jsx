@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -39,6 +39,20 @@ function App() {
   const handleRegisterModal = (e) => {
     e.preventDefault();
     setActiveModal("register");
+  };
+
+  const navigate = useNavigate();
+
+  const handleRegister = (newUser) => {
+    console.log(newUser);
+    signup(newUser)
+      .then(() => {
+        console.log("success!");
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error("Registration Error:", error);
+      });
   };
 
   const handleLogInModal = (e) => {
@@ -154,6 +168,7 @@ function App() {
         <RegisterModal
           onClose={closeActiveModal}
           isOpen={activeModal === "register"}
+          onSignUp={handleRegister}
         />
         <LoginModal
           onClose={closeActiveModal}

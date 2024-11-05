@@ -61,7 +61,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         <input
           type="email"
           name="email"
-          id="email"
+          //id="email"
           className="modal__input"
           placeholder="Email"
           value={userEmail}
@@ -73,7 +73,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         <input
           type="password"
           name="password"
-          id="password"
+          //id="password"
           className="modal__input"
           placeholder="Password"
           value={userPassWord}
@@ -85,7 +85,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         <input
           type="text"
           name="name"
-          id="name"
+          //id="name"
           className="modal__input"
           placeholder="Name"
           value={userName}
@@ -96,7 +96,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         Avatar URL*
         <input
           type="url"
-          id="avatar"
+          //id="avatar"
           name="avatar"
           placeholder="Avatar URL"
           className="modal__input"
