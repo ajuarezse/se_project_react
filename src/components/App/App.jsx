@@ -41,6 +41,11 @@ function App() {
     setActiveModal("register");
   };
 
+  const handleLogInModal = (e) => {
+    e.preventDefault();
+    setActiveModal("login");
+  };
+
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
@@ -106,6 +111,7 @@ function App() {
             weatherData={weatherData}
             handleToggleSwitchChange={handleToggleSwitchChange}
             handleRegisterModal={handleRegisterModal}
+            handleLogInModal={handleLogInModal}
           />
           <Routes>
             <Route
@@ -151,7 +157,7 @@ function App() {
         />
         <LoginModal
           onClose={closeActiveModal}
-          //isOpen={activeModal === "add-garment"}
+          isOpen={activeModal === "login"}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

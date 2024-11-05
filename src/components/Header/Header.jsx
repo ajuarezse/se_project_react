@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Header({
   handleRegisterModal,
+  handleLogInModal,
   isLoggedIn,
   username,
   handleAddClick,
@@ -55,7 +56,11 @@ function Header({
             >
               Sign Up
             </Link>
-            <Link to="/login" className="header__auth-link">
+            <Link
+              to="/login"
+              className="header__auth-link"
+              onClick={handleLogInModal}
+            >
               Log In
             </Link>
           </div>
