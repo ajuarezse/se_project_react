@@ -36,6 +36,11 @@ function App() {
     setSelectedCard(card);
   };
 
+  const handleRegisterModal = (e) => {
+    e.preventDefault();
+    setActiveModal("register");
+  };
+
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
@@ -100,6 +105,7 @@ function App() {
             handleAddClick={handleAddClick}
             weatherData={weatherData}
             handleToggleSwitchChange={handleToggleSwitchChange}
+            handleRegisterModal={handleRegisterModal}
           />
           <Routes>
             <Route
