@@ -20,6 +20,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("form submitted");
     onLogin(user);
   };
 

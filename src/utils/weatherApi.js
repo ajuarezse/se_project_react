@@ -35,7 +35,7 @@ export const filterWeatherData = (data) => {
     type: getWeatherType(data.main.temp),
   };
 
-  console.log(result);
+  //console.log(result);
   return result;
 };
 

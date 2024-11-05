@@ -48,10 +48,27 @@ function App() {
     signup(newUser)
       .then(() => {
         console.log("success!");
-        navigate("/login");
+        navigate("/signin");
+        closeActiveModal();
       })
       .catch((error) => {
         console.error("Registration Error:", error);
+      });
+  };
+
+  const handleLogIn = (newUser) => {
+    console.log("Login Data:", newUser);
+    if (!newUser.email || !newUser.password) {
+      return;
+    }
+    signin(newUser.email, newUser.password)
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
+        setIsLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Login error:", error);
       });
   };
 
@@ -109,7 +126,7 @@ function App() {
     getItems()
       .then((data) => {
         setClothingItems(data);
-        console.log(data);
+        //console.log(data);
       })
       .catch(console.error);
   }, []);
@@ -126,6 +143,7 @@ function App() {
             handleToggleSwitchChange={handleToggleSwitchChange}
             handleRegisterModal={handleRegisterModal}
             handleLogInModal={handleLogInModal}
+            isLoggedIn={isLoggedIn}
           />
           <Routes>
             <Route
@@ -173,6 +191,7 @@ function App() {
         <LoginModal
           onClose={closeActiveModal}
           isOpen={activeModal === "login"}
+          onLogin={handleLogIn}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
