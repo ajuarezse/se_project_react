@@ -48,14 +48,14 @@ function App() {
       .then(() => {
         handleLogIn(newUser.email, newUser.password);
         // logged in logic may have to move? should be handled only in handleLogIn?
-        setIsLoggedIn(true);
+        //setIsLoggedIn(true);
         closeActiveModal();
       })
       .catch((error) => {
         console.error("Registration Error:", error);
       });
   };
-
+  /*
   const handleLogIn = (newUser) => {
     console.log("Login Data:", newUser);
     if (!newUser.email || !newUser.password) {
@@ -65,6 +65,23 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         setIsLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Login error:", error);
+      });
+  };
+*/
+
+  const handleLogIn = (email, password) => {
+    if (!email || !password) return;
+
+    signin(email, password)
+      .then((data) => {
+        // Only set isLoggedIn to true if signin is successful
+        localStorage.setItem("jwt", data.token);
+        setIsLoggedIn(true);
+        navigate("/profile"); // Redirect to profile
         closeActiveModal();
       })
       .catch((error) => {
