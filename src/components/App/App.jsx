@@ -44,11 +44,11 @@ function App() {
   const navigate = useNavigate();
 
   const handleRegister = (newUser) => {
-    console.log(newUser);
     signup(newUser)
       .then(() => {
-        console.log("success!");
-        navigate("/signin");
+        handleLogIn(newUser.email, newUser.password);
+        // logged in logic may have to move? should be handled only in handleLogIn?
+        setIsLoggedIn(true);
         closeActiveModal();
       })
       .catch((error) => {
