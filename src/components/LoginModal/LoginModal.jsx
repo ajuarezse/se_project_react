@@ -21,7 +21,8 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
-    onLogin(user);
+    //onLogin(user);
+    onLogin(userEmail, userPassword);
   };
 
   function resetForm() {
@@ -67,6 +68,18 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
           onChange={handlePasswordChange}
         />
       </label>
+      <div className="modal__button-container">
+        <button type="submit" className="modal__submit">
+          Log In
+        </button>
+        <button
+          type="button"
+          className="modal__switch-button"
+          //onClick={onLoginClick}
+        >
+          or Sign up
+        </button>
+      </div>
     </ModalWithForm>
   );
 };
