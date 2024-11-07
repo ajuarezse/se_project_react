@@ -15,7 +15,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { signin, signup } from "../../utils/auth";
+import { signin, signup, checkToken } from "../../utils/auth";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -151,6 +151,13 @@ function App() {
       })
       .catch(console.error);
   }, []);
+
+  //useEffect(() => {
+  // const token = localStorage.getItem("jwt");
+  //if (token) {
+  // checkToken(token).then();
+  // }
+  //}, []);
 
   return (
     <div className="page">
