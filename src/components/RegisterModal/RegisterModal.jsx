@@ -1,7 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
+const RegisterModal = ({ isOpen, onClose, onSignUp, onLoginClick }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassWord, setUserPassword] = useState("");
   const [userName, setUserName] = useState("");
@@ -111,7 +111,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
         <button
           type="button"
           className="modal__switch-button"
-          //onClick={}
+          onClick={onLoginClick}
         >
           or Log In
         </button>

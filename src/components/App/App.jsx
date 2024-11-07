@@ -55,6 +55,10 @@ function App() {
         console.error("Registration Error:", error);
       });
   };
+
+  const onLoginClick = () => {
+    setActiveModal("login");
+  };
   /*
   const handleLogIn = (newUser) => {
     console.log("Login Data:", newUser);
@@ -204,6 +208,7 @@ function App() {
           onClose={closeActiveModal}
           isOpen={activeModal === "register"}
           onSignUp={handleRegister}
+          onLoginClick={onLoginClick}
         />
         <LoginModal
           onClose={closeActiveModal}
