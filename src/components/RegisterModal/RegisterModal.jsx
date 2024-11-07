@@ -113,7 +113,7 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           className="modal__switch-button"
           //onClick={}
         >
-          Log In
+          or Log In
         </button>
       </div>
     </ModalWithForm>
