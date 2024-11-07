@@ -116,6 +116,12 @@
   cursor: pointer;
 }
 
+.modal__button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .modal__submit {
   background-color: #000;
   border: none;
@@ -133,4 +139,10 @@
 .modal__image {
   min-width: 498px;
   padding: 0;
+}
+
+.modal__switch-button {
+  background: none;
+  color: #333;
+  border: none;
 }

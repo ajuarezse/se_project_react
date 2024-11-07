@@ -104,6 +104,18 @@ const RegisterModal = ({ isOpen, onClose, onSignUp }) => {
           onChange={handleAvatarChange}
         />
       </label>
+      <div className="modal__button-container">
+        <button type="submit" className="modal__submit">
+          Sign Up
+        </button>
+        <button
+          type="button"
+          className="modal__switch-button"
+          //onClick={}
+        >
+          Log In
+        </button>
+      </div>
     </ModalWithForm>
   );
 };
