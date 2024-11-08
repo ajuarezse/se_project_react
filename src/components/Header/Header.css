@@ -73,3 +73,15 @@
   height: 40px;
   border-radius: 50%;
 }
+
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
