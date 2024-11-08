@@ -28,8 +28,8 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({ name: "", link: "" });
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  // set up isLoggedIn state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -152,12 +152,22 @@ function App() {
       .catch(console.error);
   }, []);
 
-  //useEffect(() => {
-  // const token = localStorage.getItem("jwt");
-  //if (token) {
-  // checkToken(token).then();
-  // }
-  //}, []);
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkToken(token)
+        .then((userData) => {
+          setIsLoggedIn(true);
+          setCurrentUser(userData);
+          navigate("/profile");
+        })
+        .catch((err) => {
+          console.error("token validation failed:", err);
+          localStorage.removeItem("jwt");
+          setIsLoggedIn(flase);
+        });
+    }
+  }, [navigate]);
 
   return (
     <div className="page">
