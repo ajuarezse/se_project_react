@@ -5,7 +5,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserCon
 
 function ItemModal({ activeModal, onClose, card, onDelete }) {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = selectedCard.owner === currentUser.id;
+  const isOwn = card.owner === currentUser?.id;
   const itemDeleteButtonClassName = `item__delete-button ${
     isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
   }`;
@@ -30,7 +30,8 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
           <button
-            className="modal__delete"
+            //className="modal__delete"
+            className={itemDeleteButtonClassName}
             type="button"
             onClick={handleDelete}
           >
