@@ -107,24 +107,30 @@ function App() {
   };
 
   const handleAddItemSubmit = (item /*resetForm*/) => {
-    addItem(item)
-      .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
-        closeActiveModal();
-        //resetForm(); // Reset the form after submission
-      })
-      .catch(console.error);
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      addItem(item, token)
+        .then((newItem) => {
+          setClothingItems([newItem, ...clothingItems]);
+          closeActiveModal();
+          //resetForm(); // Reset the form after submission
+        })
+        .catch(console.error);
+    }
   };
 
   const handleDeleteItem = (id) => {
-    deleteItem(id)
-      .then(() => {
-        setClothingItems((clothingItems) =>
-          clothingItems.filter((item) => item._id !== id)
-        );
-        closeActiveModal();
-      })
-      .catch(console.error);
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      deleteItem(id, token)
+        .then(() => {
+          setClothingItems((clothingItems) =>
+            clothingItems.filter((item) => item._id !== id)
+          );
+          closeActiveModal();
+        })
+        .catch(console.error);
+    }
   };
 
   const handleToggleSwitchChange = () => {
