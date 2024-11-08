@@ -164,7 +164,7 @@ function App() {
         .catch((err) => {
           console.error("token validation failed:", err);
           localStorage.removeItem("jwt");
-          setIsLoggedIn(flase);
+          setIsLoggedIn(false);
         });
     }
   }, [navigate]);
