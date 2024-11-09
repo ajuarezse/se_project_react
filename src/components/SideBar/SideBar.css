@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("../../vendor/fonts/CabinetGrotesk-Medium.woff") format("woff");
+}
+
 .sidebar {
   width: 229px;
   height: 56px;
@@ -21,6 +26,7 @@
 .sidebar__directory {
   display: flex;
   flex-direction: column;
+  margin-top: 24px;
 }
 
 .sidebar__button {
@@ -30,4 +36,6 @@
   font-size: 20px;
   line-height: 24.8px;
   align-self: flex-start;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
