@@ -37,3 +37,7 @@
   border: none;
   background-color: transparent;
 }
+
+.modal__delete_hidden {
+  display: hidden;
+}
