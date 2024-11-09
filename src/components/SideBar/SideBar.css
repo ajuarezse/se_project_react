@@ -14,4 +14,20 @@
 
 .sidebar__avatar {
   height: 56px;
+  width: 56px;
+  border-radius: 50%;
+}
+
+.sidebar__directory {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__button {
+  border: none;
+  font-family: "CabinetGrotesk-Bold", Times, serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.8px;
+  align-self: flex-start;
 }
