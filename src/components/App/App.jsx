@@ -17,6 +17,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { signin, signup, checkToken } from "../../utils/auth";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -40,6 +41,11 @@ function App() {
   const handleRegisterModal = (e) => {
     e.preventDefault();
     setActiveModal("register");
+  };
+
+  const openEditProfileModal = (e) => {
+    e.preventDefault();
+    setActiveModal("edit-profile");
   };
 
   const navigate = useNavigate();
@@ -139,6 +145,8 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
+  const handleEditProfileModal = () => {};
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -210,6 +218,7 @@ function App() {
                       handleCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       handleAddClick={handleAddClick}
+                      openEditProfileModal={openEditProfileModal}
                     />
                   </ProtectedRoute>
                 }
@@ -239,6 +248,11 @@ function App() {
             onClose={closeActiveModal}
             isOpen={activeModal === "login"}
             onLogin={handleLogIn}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit-profile"}
+            onClose={closeActiveModal}
+            onSubmit={handleEditProfileModal}
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
