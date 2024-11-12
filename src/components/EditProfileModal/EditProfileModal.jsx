@@ -33,8 +33,33 @@ const EditProfileModal = ({ isOpen, onClose }) => {
       onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label modal__label_text">
-        Name{"name"}
+        Name *
+        <input
+          type="text"
+          name="name"
+          className="modal__input"
+          id="name"
+          placeholder={currentUser?.name}
+          value={userName}
+          onChange={handleNameChange}
+        />
       </label>
+      <label htmlFor="imageURL" className="modal__label">
+        Avatar URL*
+        <input
+          type="url"
+          className="modal__input modal__label_text"
+          name="link"
+          placeholder={currentUser?.avatar}
+          value={userAvatar}
+          onChange={handleUrlChange}
+        />
+      </label>
+      <div className="modal__button-container">
+        <button type="submit" className="modal__submit">
+          Save changes
+        </button>
+      </div>
     </ModalWithForm>
   );
 };
