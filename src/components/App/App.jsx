@@ -166,6 +166,10 @@ function App() {
       });
   };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
