@@ -16,6 +16,8 @@ import {
   addItem,
   deleteItem,
   editUserProfile,
+  addCardLike,
+  removeCardLike,
 } from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
@@ -168,6 +170,19 @@ function App() {
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
+    if (!token) {
+      console.error("User is not authenticated.");
+      return;
+    }
+    const apiAction = isLiked ? removeCardLike : addCardLike;
+
+    apiAction(id, token)
+      .then((updatedCard) => {
+        setClothingItems((items) =>
+          items.map((item) => (item._id === id ? updatedCard : item))
+        );
+      })
+      .catch((error) => console.log("Error updating like status:", error));
   };
 
   useEffect(() => {
