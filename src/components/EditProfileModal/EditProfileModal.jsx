@@ -19,6 +19,24 @@ const EditProfileModal = ({ isOpen, onClose }) => {
     name: userName,
     avatar: userAvatar,
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <ModalWithForm
+      title="Change profile Data"
+      buttonText="Save changes"
+      isOpen={isOpen}
+      onClose={onClose}
+      onSubmit={handleSubmit}
+    >
+      <label htmlFor="name" className="modal__label modal__label_text">
+        Name{"name"}
+      </label>
+    </ModalWithForm>
+  );
 };
 
 export default EditProfileModal;
