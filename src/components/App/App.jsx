@@ -11,7 +11,12 @@ import Profile from "../Profile/Profile";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
-import { getItems, addItem, deleteItem } from "../../utils/api";
+import {
+  getItems,
+  addItem,
+  deleteItem,
+  editUserProfile,
+} from "../../utils/api";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
@@ -145,7 +150,21 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  const handleEditProfileModal = (newUserData) => {};
+  const handleEditProfileModal = (newUserData) => {
+    const token = localStorage.getItem("jwt");
+    if (!token) {
+      console.error("User is not authenticated");
+      return;
+    }
+    editUserProfile(newUserData, token)
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Failed to update profile", error);
+      });
+  };
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
