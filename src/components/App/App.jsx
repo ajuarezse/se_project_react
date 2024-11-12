@@ -145,7 +145,7 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  const handleEditProfileModal = () => {};
+  const handleEditProfileModal = (newUserData) => {};
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
