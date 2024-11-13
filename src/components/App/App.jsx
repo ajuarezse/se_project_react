@@ -91,20 +91,29 @@ function App() {
   };
 */
 
+  const handleTokenValidation = (token) => {
+    checkToken(token)
+      .then((userData) => {
+        setIsLoggedIn(true);
+        setCurrentUser(userData);
+        navigate("/profile");
+      })
+      .catch((err) => {
+        console.error("Token validation failed:", err);
+        localStorage.removeItem("jwt");
+        setIsLoggedIn(false);
+        setCurrentUser(null);
+      });
+  };
+
   const handleLogIn = (email, password) => {
     if (!email || !password) return;
 
     signin(email, password)
       .then((data) => {
-        // Only set isLoggedIn to true if signin is successful
-        localStorage.setItem("jwt", data.token);
-
         if (data.token) {
-          checkToken(data.token).then((userData) => {
-            setIsLoggedIn(true);
-            setCurrentUser(userData);
-            navigate("/profile");
-          });
+          localStorage.setItem("jwt", data.token);
+          handleTokenValidation(data.token);
         }
         closeActiveModal();
       })
@@ -133,7 +142,6 @@ function App() {
         .then((newItem) => {
           setClothingItems([newItem, ...clothingItems]);
           closeActiveModal();
-          //resetForm(); // Reset the form after submission
         })
         .catch(console.error);
     }
@@ -221,19 +229,12 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      checkToken(token)
-        .then((userData) => {
-          setIsLoggedIn(true);
-          setCurrentUser(userData);
-          navigate("/profile");
-        })
-        .catch((err) => {
-          console.error("token validation failed:", err);
-          localStorage.removeItem("jwt");
-          setIsLoggedIn(false);
-        });
+      handleTokenValidation(token);
+    } else {
+      setIsLoggedIn(false);
+      setCurrentUser(null);
     }
-  }, [navigate]);
+  }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
