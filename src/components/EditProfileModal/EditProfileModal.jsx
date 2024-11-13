@@ -39,7 +39,7 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
           type="text"
           name="name"
           className="modal__input"
-          id="name"
+          //id="name"
           placeholder={currentUser?.name}
           value={userName}
           onChange={handleNameChange}

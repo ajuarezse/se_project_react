@@ -85,7 +85,6 @@ const RegisterModal = ({ isOpen, onClose, onSignUp, onLoginClick }) => {
         <input
           type="text"
           name="name"
-          //id="name"
           className="modal__input"
           placeholder="Name"
           value={userName}
