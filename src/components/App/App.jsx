@@ -73,23 +73,6 @@ function App() {
   const onLoginClick = () => {
     setActiveModal("login");
   };
-  /*
-  const handleLogIn = (newUser) => {
-    console.log("Login Data:", newUser);
-    if (!newUser.email || !newUser.password) {
-      return;
-    }
-    signin(newUser.email, newUser.password)
-      .then((data) => {
-        localStorage.setItem("jwt", data.token);
-        setIsLoggedIn(true);
-        closeActiveModal();
-      })
-      .catch((error) => {
-        console.error("Login error:", error);
-      });
-  };
-*/
 
   const handleTokenValidation = (token) => {
     checkToken(token)

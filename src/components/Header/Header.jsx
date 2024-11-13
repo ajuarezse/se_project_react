@@ -67,20 +67,20 @@ function Header({
           </>
         ) : (
           <div className="header__auth-buttons">
-            <Link
-              to="/signup"
+            <button
+              type="button"
               className="header__auth-link"
               onClick={handleRegisterModal}
             >
               Sign Up
-            </Link>
-            <Link
-              //to="/login"
+            </button>
+            <button
+              type="button"
               className="header__auth-link"
               onClick={handleLogInModal}
             >
               Log In
-            </Link>
+            </button>
           </div>
         )}
       </div>
