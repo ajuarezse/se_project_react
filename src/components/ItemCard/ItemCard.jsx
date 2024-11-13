@@ -1,14 +1,20 @@
 import "./ItemCard.css";
+import notLikedIcon from "../../assets/notLiked.png";
+import likedIcon from "../../assets/Liked.png";
 
-function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
-  console.log("ItemCard: currentUser:", currentUser, "item:", item);
+function ItemCard({ item, onCardClick, onCardLike, currentUser, isLoggedIn }) {
+  //console.log("ItemCard: currentUser:", currentUser, "item:", item);
   const isLiked = item.likes.some((id) => id === currentUser?._id);
-  const itemLikeButtonClassName = `card__like-button ${
-    isLiked ? "card__like-button_active" : ""
-  }`;
+  const isOwner = currentUser?._id === item.isOwner;
+  //const itemLikeButtonClassName = `card__like-button ${
+  //  isLiked ? "card__like-button_active" : ""
+  //}`;
 
+  const buttonIcon = isLiked ? likedIcon : notLikedIcon;
   const handleCardClick = () => {
-    onCardClick(item);
+    if (isLoggedIn && isOwner) {
+      onCardClick(item);
+    }
   };
 
   const handleLike = () => {
@@ -23,11 +29,17 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
         src={item.imageUrl}
         alt={item.name}
       />
-      {currentUser && (
-        <button className={itemLikeButtonClassName} onClick={handleLike}>
-          {isliked ? "Unlike" : "Like"}
-        </button>
-      )}
+      <button
+        className="card__like-button"
+        onClick={handleLike}
+        disabled={!isLoggedIn || isOwner}
+      >
+        <img
+          src={buttonIcon}
+          alt={isLiked ? "Unlike" : "Like"}
+          className="card__like-icon"
+        />
+      </button>
     </li>
   );
 }

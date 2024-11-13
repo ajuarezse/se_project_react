@@ -254,6 +254,7 @@ function App() {
                     handleCardClick={handleCardClick}
                     onCardLike={handleCardLike}
                     currentUser={currentUser}
+                    isLoggedIn={isLoggedIn}
                   />
                 }
               />
