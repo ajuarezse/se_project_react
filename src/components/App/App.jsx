@@ -185,6 +185,13 @@ function App() {
       .catch((error) => console.log("Error updating like status:", error));
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+    navigate("/");
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -245,6 +252,8 @@ function App() {
                     clothingItems={clothingItems}
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
+                    onCardLike={handleCardLike}
+                    currentUser={currentUser}
                   />
                 }
               />
@@ -257,6 +266,7 @@ function App() {
                       clothingItems={clothingItems}
                       handleAddClick={handleAddClick}
                       openEditProfileModal={openEditProfileModal}
+                      handleSignOut={handleSignOut}
                     />
                   </ProtectedRoute>
                 }
@@ -275,6 +285,7 @@ function App() {
             card={selectedCard}
             onClose={closeActiveModal}
             onDelete={handleDeleteItem}
+            onCardLike={handleCardLike}
           />
           <RegisterModal
             onClose={closeActiveModal}
