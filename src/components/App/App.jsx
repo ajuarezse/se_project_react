@@ -98,8 +98,14 @@ function App() {
       .then((data) => {
         // Only set isLoggedIn to true if signin is successful
         localStorage.setItem("jwt", data.token);
-        setIsLoggedIn(true);
-        navigate("/profile"); // Redirect to profile
+
+        if (data.token) {
+          checkToken(data.token).then((userData) => {
+            setIsLoggedIn(true);
+            setCurrentUser(userData);
+            navigate("/profile");
+          });
+        }
         closeActiveModal();
       })
       .catch((error) => {

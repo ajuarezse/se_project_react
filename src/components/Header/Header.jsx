@@ -53,7 +53,7 @@ function Header({
                 <p className="header__username">{currentUser?.name}</p>
                 {currentUser.avatar ? (
                   <img
-                    src={currentUser.avatar}
+                    src={currentUser?.avatar}
                     alt=" User avatar"
                     className="header__avatar"
                   />
@@ -75,7 +75,7 @@ function Header({
               Sign Up
             </Link>
             <Link
-              to="/login"
+              //to="/login"
               className="header__auth-link"
               onClick={handleLogInModal}
             >
