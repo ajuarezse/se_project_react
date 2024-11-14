@@ -7,7 +7,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserCon
 function ClothesSection({ handleCardClick, clothingItems, handleAddClick }) {
   const currentUser = useContext(CurrentUserContext);
   const userItems = clothingItems.filter(
-    (item) => item.owner === currentUser?.id
+    (item) => item.owner === currentUser?._id
   );
 
   return (
@@ -23,14 +23,16 @@ function ClothesSection({ handleCardClick, clothingItems, handleAddClick }) {
         </button>
       </div>
       <ul className="clothes-section-items">
-        {clothingItems.map((item) => (
-          <ItemCard
-            key={item._id}
-            item={item}
-            //TODO - pass as prop
-            onCardClick={handleCardClick}
-          />
-        ))}
+        {userItems.map((item) => {
+          return (
+            <ItemCard
+              key={item._id || item.id}
+              item={item}
+              //TODO - pass as prop
+              onCardClick={handleCardClick}
+            />
+          );
+        })}
       </ul>
     </div>
   );

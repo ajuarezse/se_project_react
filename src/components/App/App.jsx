@@ -118,12 +118,12 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemSubmit = (item /*resetForm*/) => {
+  const handleAddItemSubmit = (item) => {
     const token = localStorage.getItem("jwt");
     if (token) {
       addItem(item, token)
         .then((newItem) => {
-          setClothingItems([newItem, ...clothingItems]);
+          setClothingItems((prevItems) => [newItem, ...prevItems]);
           closeActiveModal();
         })
         .catch(console.error);

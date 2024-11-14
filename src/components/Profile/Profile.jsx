@@ -9,6 +9,7 @@ function Profile({
   openEditProfileModal,
   handleSignOut,
 }) {
+  console.log(clothingItems);
   return (
     <div className="profile">
       <section className="profile__sidebar">

@@ -3,7 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
   const [name, setName] = useState("");
-  const [imageUrl, setUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
 
   const handleNameChange = (e) => {
@@ -13,7 +13,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
 
   const handleUrlChange = (e) => {
     console.log(e.target.value);
-    setUrl(e.target.value);
+    setImageUrl(e.target.value);
   };
 
   const handleWeatherChange = (e) => {
@@ -23,7 +23,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
 
   function resetForm() {
     setName("");
-    setUrl("");
+    setImageUrl("");
     setWeather("");
   }
 
@@ -35,7 +35,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ name, imageUrl, weather });
+    onAddItem({ name, imageUrl: imageUrl, weather });
   };
   return (
     <ModalWithForm
