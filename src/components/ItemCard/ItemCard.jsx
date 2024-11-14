@@ -1,6 +1,6 @@
 import "./ItemCard.css";
-import notLikedIcon from "../../assets/notLiked.png";
-import likedIcon from "../../assets/Liked.png";
+import notLikedIcon from "../../assets/notLiked.svg";
+import likedIcon from "../../assets/Liked.svg";
 
 function ItemCard({ item, onCardClick, onCardLike, currentUser, isLoggedIn }) {
   //console.log("ItemCard: currentUser:", currentUser, "item:", item);
@@ -22,24 +22,26 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser, isLoggedIn }) {
   };
   return (
     <li className="card">
-      <h2 className="card__name">{item.name}</h2>
+      <h2 className="card__name">
+        {item.name}
+        <button
+          className="card__like-button"
+          onClick={handleLike}
+          disabled={!isLoggedIn || isOwner}
+        >
+          <img
+            src={buttonIcon}
+            alt={isLiked ? "Unlike" : "Like"}
+            className="card__like-icon"
+          />
+        </button>
+      </h2>
       <img
         onClick={handleCardClick}
         className="card__image"
         src={item.imageUrl}
         alt={item.name}
       />
-      <button
-        className="card__like-button"
-        onClick={handleLike}
-        disabled={!isLoggedIn || isOwner}
-      >
-        <img
-          src={buttonIcon}
-          alt={isLiked ? "Unlike" : "Like"}
-          className="card__like-icon"
-        />
-      </button>
     </li>
   );
 }
