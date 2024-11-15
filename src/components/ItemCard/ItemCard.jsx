@@ -2,7 +2,16 @@ import "./ItemCard.css";
 import notLikedIcon from "../../assets/notLiked.svg";
 import likedIcon from "../../assets/Liked.svg";
 
-function ItemCard({ item, onCardLike, currentUser, isLoggedIn, onCardClick }) {
+function ItemCard({
+  item,
+  onCardLike,
+  testProp,
+  currentUser,
+  isLoggedIn,
+  onCardClick,
+}) {
+  console.log("onCardLike in ItemCard:", onCardLike);
+
   const isLiked = item.likes.some((id) => id === currentUser?._id);
   const isOwner = currentUser?._id === item.owner;
 
@@ -12,7 +21,11 @@ function ItemCard({ item, onCardLike, currentUser, isLoggedIn, onCardClick }) {
   };
 
   const handleLike = () => {
-    onCardLike(item);
+    console.log("onCardLike in ItemCard called with:", {
+      id: item._id,
+      isLiked: isLiked,
+    });
+    onCardLike({ id: item._id, isLiked: isLiked });
   };
   return (
     <li className="card">
@@ -21,7 +34,7 @@ function ItemCard({ item, onCardLike, currentUser, isLoggedIn, onCardClick }) {
         <button
           className="card__like-button"
           onClick={handleLike}
-          disabled={!isLoggedIn || isOwner}
+          //disabled={!isOwner}
         >
           <img
             src={buttonIcon}

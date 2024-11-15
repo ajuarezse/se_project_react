@@ -8,8 +8,9 @@ function Profile({
   handleAddClick,
   openEditProfileModal,
   handleSignOut,
+  onCardLike,
 }) {
-  console.log(clothingItems);
+  console.log("onCardLike in Profile:", onCardLike);
   return (
     <div className="profile">
       <section className="profile__sidebar">
@@ -23,6 +24,7 @@ function Profile({
           handleCardClick={handleCardClick}
           clothingItems={clothingItems}
           handleAddClick={handleAddClick}
+          onCardLike={onCardLike}
         />
       </section>
     </div>
