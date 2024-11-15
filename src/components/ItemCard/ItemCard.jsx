@@ -3,12 +3,8 @@ import notLikedIcon from "../../assets/notLiked.svg";
 import likedIcon from "../../assets/Liked.svg";
 
 function ItemCard({ item, onCardLike, currentUser, isLoggedIn, onCardClick }) {
-  //console.log("ItemCard: currentUser:", currentUser, "item:", item);
   const isLiked = item.likes.some((id) => id === currentUser?._id);
   const isOwner = currentUser?._id === item.owner;
-  //const itemLikeButtonClassName = `card__like-button ${
-  //  isLiked ? "card__like-button_active" : ""
-  //}`;
 
   const buttonIcon = isLiked ? likedIcon : notLikedIcon;
   const handleCardClick = () => {
