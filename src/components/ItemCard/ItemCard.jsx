@@ -10,8 +10,6 @@ function ItemCard({
   isLoggedIn,
   onCardClick,
 }) {
-  console.log("onCardLike in ItemCard:", onCardLike);
-
   const isLiked = item.likes.some((id) => id === currentUser?._id);
   const isOwner = currentUser?._id === item.owner;
 
@@ -34,7 +32,7 @@ function ItemCard({
         <button
           className="card__like-button"
           onClick={handleLike}
-          //disabled={!isOwner}
+          disabled={!isOwner}
         >
           <img
             src={buttonIcon}

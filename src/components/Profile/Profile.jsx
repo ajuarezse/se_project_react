@@ -10,7 +10,6 @@ function Profile({
   handleSignOut,
   onCardLike,
 }) {
-  console.log("onCardLike in Profile:", onCardLike);
   return (
     <div className="profile">
       <section className="profile__sidebar">

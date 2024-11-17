@@ -12,7 +12,6 @@ function Main({
   currentUser,
   isLoggedIn,
 }) {
-  console.log("onCardLike in Main:", onCardLike);
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   return (
