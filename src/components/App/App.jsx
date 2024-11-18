@@ -176,7 +176,9 @@ function App() {
     apiAction(id, token)
       .then((updatedCard) => {
         setClothingItems((items) =>
-          items.map((item) => (item._id === id ? updatedCard : item))
+          items.map((item) =>
+            item._id === id ? { ...item, likes: updatedCard.likes } : item
+          )
         );
       })
       .catch((error) => console.log("Error updating like status:", error));
