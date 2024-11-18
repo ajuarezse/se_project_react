@@ -36,7 +36,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     setUserEmail("");
     setUserPassword("");
     setIsButtonEnabled(false);
-    if (emailRef.current) emailRed.current.value = "";
+    if (emailRef.current) emailRef.current.value = "";
     if (passwordRef.current) passwordRef.current.value = "";
   }
 
@@ -45,6 +45,10 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       resetForm();
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    validateForm();
+  }, [userEmail, userPassword]);
 
   console.log(emailRef.current?.validity);
   return (
@@ -86,8 +90,9 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         <button
           type="submit"
           className={`modal__submit ${
-            buttonValid && isPasswordValid && "modal__submit_enabled"
+            isButtonEnabled ? "modal__submit_enabled" : ""
           }`}
+          disabled={!isButtonEnabled}
           //className="modal__submit"
         >
           Log In
