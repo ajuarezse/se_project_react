@@ -148,3 +148,7 @@
   margin-left: 4px;
   cursor: pointer;
 }
+
+.modal__switch-button_enabled {
+  background: black;
+}

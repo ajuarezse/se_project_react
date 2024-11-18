@@ -122,7 +122,9 @@ function App() {
     const token = localStorage.getItem("jwt");
     if (token) {
       addItem(item, token)
-        .then((newItem) => {
+        .then((response) => {
+          const newItem = response.data;
+          console.log("Extracted new item:", newItem); //debug
           setClothingItems((prevItems) => [newItem, ...prevItems]);
           closeActiveModal();
         })

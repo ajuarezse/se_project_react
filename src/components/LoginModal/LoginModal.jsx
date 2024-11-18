@@ -1,9 +1,10 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const emailRef = useRef();
 
   const user = {
     email: userEmail,
@@ -24,6 +25,8 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     onLogin(userEmail, userPassword);
   };
 
+  const buttonValid = emailRef.current?.validity.valid;
+
   function resetForm() {
     setUserEmail("");
     setUserPassword("");
@@ -35,6 +38,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     }
   }, [isOpen]);
 
+  console.log(emailRef.current?.validity);
   return (
     <ModalWithForm
       title="Log In"
@@ -46,9 +50,11 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       <label htmlFor="email">
         Email
         <input
+          ref={emailRef}
           type="email"
           name="email"
           id="email"
+          required
           className="modal__input"
           placeholder="Email"
           value={userEmail}
@@ -73,7 +79,10 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         </button>
         <button
           type="button"
-          className="modal__switch-button"
+          className={`modal__switch-button ${
+            buttonValid && "modal__switch-button_enabled"
+          }`}
+          //className="modal__switch-button"
           //onClick={onLoginClick}
         >
           or Sign up
