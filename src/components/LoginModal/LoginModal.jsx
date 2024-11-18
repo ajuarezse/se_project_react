@@ -5,6 +5,8 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const emailRef = useRef();
+  const passwordRef = useRef();
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
   const user = {
     email: userEmail,
@@ -21,15 +23,21 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form submitted");
     onLogin(userEmail, userPassword);
   };
 
-  const buttonValid = emailRef.current?.validity.valid;
+  const validateForm = () => {
+    const emailValid = emailRef.current?.validity.valid;
+    const passwordValid = passwordRef.current?.value.trim().length > 0;
+    setIsButtonEnabled(emailValid && passwordValid);
+  };
 
   function resetForm() {
     setUserEmail("");
     setUserPassword("");
+    setIsButtonEnabled(false);
+    if (emailRef.current) emailRed.current.value = "";
+    if (passwordRef.current) passwordRef.current.value = "";
   }
 
   useEffect(() => {
@@ -64,6 +72,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       <label htmlFor="password">
         Password
         <input
+          ref={passwordRef}
           type="password"
           name="password"
           id="password"
@@ -74,15 +83,21 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         />
       </label>
       <div className="modal__button-container">
-        <button type="submit" className="modal__submit">
+        <button
+          type="submit"
+          className={`modal__submit ${
+            buttonValid && isPasswordValid && "modal__submit_enabled"
+          }`}
+          //className="modal__submit"
+        >
           Log In
         </button>
         <button
           type="button"
-          className={`modal__switch-button ${
-            buttonValid && "modal__switch-button_enabled"
-          }`}
-          //className="modal__switch-button"
+          //className={`modal__switch-button ${
+          //buttonValid && "modal__switch-button_enabled"
+          //}`}
+          className="modal__switch-button"
           //onClick={onLoginClick}
         >
           or Sign up

@@ -132,6 +132,10 @@
   cursor: pointer;
 }
 
+.modal__submit_enabled {
+  background-color: black;
+}
+
 .modal__submit:hover {
   background-color: #616161;
 }
