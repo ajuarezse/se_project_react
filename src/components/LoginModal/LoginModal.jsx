@@ -8,11 +8,6 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const passwordRef = useRef();
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
-  const user = {
-    email: userEmail,
-    password: userPassword,
-  };
-
   const handleEmailChange = (e) => {
     setUserEmail(e.target.value);
   };
@@ -50,7 +45,6 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
     validateForm();
   }, [userEmail, userPassword]);
 
-  console.log(emailRef.current?.validity);
   return (
     <ModalWithForm
       title="Log In"
@@ -97,14 +91,7 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
         >
           Log In
         </button>
-        <button
-          type="button"
-          //className={`modal__switch-button ${
-          //buttonValid && "modal__switch-button_enabled"
-          //}`}
-          className="modal__switch-button"
-          //onClick={onLoginClick}
-        >
+        <button type="button" className="modal__switch-button">
           or Sign up
         </button>
       </div>
