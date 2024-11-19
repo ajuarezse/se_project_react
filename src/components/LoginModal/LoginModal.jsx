@@ -4,16 +4,27 @@ import { useState, useEffect, useRef } from "react";
 const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const emailRef = useRef();
-  const passwordRef = useRef();
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+
+  const passwordRef = useRef();
 
   const handleEmailChange = (e) => {
     setUserEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
-    setUserPassword(e.target.value);
+    const password = e.target.value;
+    setUserPassword(password);
+
+    if (password.length >= 4) {
+      setIsPasswordValid(true);
+      setPasswordErrorMessage("");
+    } else {
+      setIsPasswordValid(false);
+      setPasswordErrorMessage("Incorrect Password");
+    }
   };
 
   const handleSubmit = (e) => {
@@ -22,28 +33,27 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
   };
 
   const validateForm = () => {
-    const emailValid = emailRef.current?.validity.valid;
-    const passwordValid = passwordRef.current?.value.trim().length > 0;
-    setIsButtonEnabled(emailValid && passwordValid);
+    const passwordValid = userPassword.trim().length >= 4;
+    setIsButtonEnabled(passwordValid);
   };
 
-  function resetForm() {
+  useEffect(() => {
+    validateForm();
+  }, [userPassword]);
+
+  const resetForm = () => {
     setUserEmail("");
     setUserPassword("");
+    setIsPasswordValid(true);
+    setPasswordErrorMessage("");
     setIsButtonEnabled(false);
-    if (emailRef.current) emailRef.current.value = "";
-    if (passwordRef.current) passwordRef.current.value = "";
-  }
+  };
 
   useEffect(() => {
     if (isOpen) {
       resetForm();
     }
   }, [isOpen]);
-
-  useEffect(() => {
-    validateForm();
-  }, [userEmail, userPassword]);
 
   return (
     <ModalWithForm
@@ -56,7 +66,6 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
       <label htmlFor="email">
         Email
         <input
-          ref={emailRef}
           type="email"
           name="email"
           id="email"
@@ -67,14 +76,21 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
           onChange={handleEmailChange}
         />
       </label>
-      <label htmlFor="password">
-        Password
+      <label
+        htmlFor="password"
+        className={`modal__label ${
+          !isPasswordValid ? "modal__label_error" : ""
+        }`}
+      >
+        {isPasswordValid ? "Password" : passwordErrorMessage}
         <input
           ref={passwordRef}
           type="password"
           name="password"
           id="password"
-          className="modal__input"
+          className={`modal__input ${
+            !isPasswordValid ? "modal__input_error" : ""
+          }`}
           placeholder="Password"
           value={userPassword}
           onChange={handlePasswordChange}
