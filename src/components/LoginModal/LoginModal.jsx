@@ -87,7 +87,6 @@ const LoginModal = ({ isOpen, onClose, onLogin }) => {
             isButtonEnabled ? "modal__submit_enabled" : ""
           }`}
           disabled={!isButtonEnabled}
-          //className="modal__submit"
         >
           Log In
         </button>
