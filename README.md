@@ -22,7 +22,9 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 - 🎨 **CSS**: Custom styling based on a provided Figma design.
 
-- [Github -- Backend Repo](https://github.com/ajuarezse/se_project_express)
+## Links:
+
+- [Backend Repo -- Github](https://github.com/ajuarezse/se_project_express)
 
 ---
 
