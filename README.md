@@ -26,6 +26,8 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 - [Backend Repo -- Github](https://github.com/ajuarezse/se_project_express)
 
+- [Design -- Figma](https://www.figma.com/file/bfVOvqlLmoKZ5lpro8WWBe/Sprint-14_-WTWR?t=3hvVWRz9LUFsxyNn-6)
+
 ---
 
 I plan to expand this project with additional features and functionalities. I'd like to add form validation and configure a responsive design. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
