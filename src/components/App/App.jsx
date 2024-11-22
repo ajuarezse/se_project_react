@@ -263,6 +263,7 @@ function App() {
                       openEditProfileModal={openEditProfileModal}
                       handleSignOut={handleSignOut}
                       onCardLike={handleCardLike}
+                      isLoggedIn={isLoggedIn}
                     />
                   </ProtectedRoute>
                 }
