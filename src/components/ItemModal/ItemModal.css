@@ -39,5 +39,5 @@
 }
 
 .modal__delete_hidden {
-  display: hidden;
+  display: none;
 }

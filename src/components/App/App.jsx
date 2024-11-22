@@ -282,6 +282,7 @@ function App() {
             onClose={closeActiveModal}
             onDelete={handleDeleteItem}
             onCardLike={handleCardLike}
+            isLoggedIn={isLoggedIn}
           />
           <RegisterModal
             onClose={closeActiveModal}

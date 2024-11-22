@@ -3,11 +3,11 @@ import closeButton from "../../assets/closeButton.png";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
-function ItemModal({ activeModal, onClose, card, onDelete }) {
+function ItemModal({ activeModal, onClose, card, onDelete, isLoggedIn }) {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = card.owner === currentUser?.id;
+  const isOwn = card.owner === currentUser?._id;
   const itemDeleteButtonClassName = `modal__delete ${
-    isOwn ? "modal__delete" : "modal__delete_hidden"
+    isOwn && isLoggedIn ? "modal__delete" : "modal__delete_hidden"
   }`;
   const handleDelete = () => {
     onDelete(card._id);
@@ -30,7 +30,6 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
           <button
-            //className="modal__delete"
             className={itemDeleteButtonClassName}
             type="button"
             onClick={handleDelete}
