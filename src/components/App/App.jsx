@@ -61,8 +61,6 @@ function App() {
     signup(newUser)
       .then(() => {
         handleLogIn(newUser.email, newUser.password);
-        // logged in logic may have to move? should be handled only in handleLogIn?
-        //setIsLoggedIn(true);
         closeActiveModal();
       })
       .catch((error) => {
@@ -124,7 +122,7 @@ function App() {
       addItem(item, token)
         .then((response) => {
           const newItem = response.data;
-          console.log("Extracted new item:", newItem); //debug
+          console.log("Extracted new item:", newItem);
           setClothingItems((prevItems) => [newItem, ...prevItems]);
           closeActiveModal();
         })
@@ -197,18 +195,15 @@ function App() {
     getWeather(coordinates, APIkey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
-        //console.log(filteredData.temp.F);
         setWeatherData(filteredData);
       })
       .catch(console.error);
   }, []);
-  //console.log(CurrentTemperatureUnitContext);
 
   useEffect(() => {
     getItems()
       .then((data) => {
         setClothingItems(data);
-        //console.log(data);
       })
       .catch(console.error);
   }, []);
