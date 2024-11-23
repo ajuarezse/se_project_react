@@ -242,7 +242,6 @@ function App() {
                     weatherData={weatherData}
                     handleCardClick={handleCardClick}
                     onCardLike={handleCardLike}
-                    currentUser={currentUser}
                     isLoggedIn={isLoggedIn}
                   />
                 }

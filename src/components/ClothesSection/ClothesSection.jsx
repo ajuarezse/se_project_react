@@ -1,5 +1,4 @@
 import ItemCard from "../ItemCard/ItemCard";
-//import { defaultClothingItems } from "../../utils/constants";
 import "./ClothesSection.css";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
@@ -33,11 +32,9 @@ function ClothesSection({
           return (
             <ItemCard
               key={item._id || item.id}
-              //key={item._id}
               item={item}
               onCardLike={onCardLike}
               onCardClick={handleCardClick}
-              currentUser={currentUser}
               isLoggedIn={isLoggedIn}
             />
           );

@@ -1,8 +1,11 @@
 import "./ItemCard.css";
 import notLikedIcon from "../../assets/notLiked.svg";
 import likedIcon from "../../assets/Liked.svg";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
-function ItemCard({ item, onCardLike, currentUser, isLoggedIn, onCardClick }) {
+function ItemCard({ item, onCardLike, isLoggedIn, onCardClick }) {
+  const currentUser = useContext(CurrentUserContext);
   const isLiked = Array.isArray(item.likes)
     ? item.likes.some((id) => id === currentUser?._id)
     : false;
