@@ -7,6 +7,13 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
   const [userName, setUserName] = useState(currentUser?.name || "");
   const [userAvatar, setUserAvatar] = useState(currentUser?.avatar || "");
 
+  useEffect(() => {
+    if (isOpen && currentUser) {
+      setUserAvatar(currentUser?.avatar || "");
+      setUserName(currentUser?.name || "");
+    }
+  }, []);
+
   const handleNameChange = (e) => {
     setUserName(e.target.value);
   };
@@ -39,8 +46,6 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
           type="text"
           name="name"
           className="modal__input"
-          //id="name"
-          placeholder={currentUser?.name}
           value={userName}
           onChange={handleNameChange}
         />
@@ -51,7 +56,6 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
           type="url"
           className="modal__input modal__label_text"
           name="link"
-          placeholder={currentUser?.avatar}
           value={userAvatar}
           onChange={handleUrlChange}
         />
