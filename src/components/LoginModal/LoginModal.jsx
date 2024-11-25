@@ -64,12 +64,12 @@ const LoginModal = ({ isOpen, onClose, onLogin, handleRegisterModal }) => {
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email">
+      <label htmlFor="login-email">
         Email
         <input
           type="email"
           name="email"
-          id="email"
+          id="login-email"
           required
           className="modal__input"
           placeholder="Email"
@@ -78,7 +78,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, handleRegisterModal }) => {
         />
       </label>
       <label
-        htmlFor="password"
+        htmlFor="login-password"
         className={`modal__label ${
           !isPasswordValid ? "modal__label_error" : ""
         }`}
@@ -88,7 +88,7 @@ const LoginModal = ({ isOpen, onClose, onLogin, handleRegisterModal }) => {
           ref={passwordRef}
           type="password"
           name="password"
-          id="password"
+          id="login-password"
           className={`modal__input ${
             !isPasswordValid ? "modal__input_error" : ""
           }`}
