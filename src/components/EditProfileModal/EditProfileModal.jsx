@@ -12,7 +12,7 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
       setUserAvatar(currentUser?.avatar || "");
       setUserName(currentUser?.name || "");
     }
-  }, []);
+  }, [isOpen, currentUser]);
 
   const handleNameChange = (e) => {
     setUserName(e.target.value);
