@@ -30,4 +30,4 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 ---
 
-I plan to expand this project with additional features and functionalities. I'd like to add form validation and configure a responsive design. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
+I plan to expand this project with additional features and functionalities. I'd like to add weather cards that change with the current weather conditions for example. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
