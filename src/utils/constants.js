@@ -37,6 +37,11 @@ export const defaultClothingItems = [
   },
 ];
 
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.ftp.sh"
+    : "http://localhost:3001";
+
 export const coordinates = {
   latitude: 37.80485534667969,
   longitude: -122.27250671386719,
