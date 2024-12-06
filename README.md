@@ -24,10 +24,12 @@ The WTWR (What to Wear) project is a React-based front-end application designed 
 
 ## Links:
 
-- [Backend -- Github Repo](https://github.com/ajuarezse/se_project_express)
+- Visit the live site here: [wtwr.ftp.sh](https://wtwr.ftp.sh)
 
-- [Design -- Figma](https://www.figma.com/file/bfVOvqlLmoKZ5lpro8WWBe/Sprint-14_-WTWR?t=3hvVWRz9LUFsxyNn-6)
+- Checkout the back-end: [Back-End -- Github Repo](https://github.com/ajuarezse/se_project_express)
+
+- See the design I used: [Design -- Figma](https://www.figma.com/file/bfVOvqlLmoKZ5lpro8WWBe/Sprint-14_-WTWR?t=3hvVWRz9LUFsxyNn-6)
 
 ---
 
-I plan to expand this project with additional features and functionalities. I'd like to add weather cards that change with the current weather conditions for example. The work I’ve done so far demonstrates my skills in React, API integration, and front-end development.
+I plan to expand this project with additional features and functionalities. I'd like to add weather cards that change with the current weather conditions for example. The work I’ve done so far demonstrates my skills in React, API integration, and front-end/back-end development.
