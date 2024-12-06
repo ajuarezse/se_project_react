@@ -56,4 +56,4 @@ The site, now hosted on Google Cloud Services, integrates both front-end and bac
 
 ---
 
-I plan to expand this project further, including weather cards that change with the current weather conditions for example. The work I’ve done so far showcases my skills in React, API integration, secure hosting, middleware development, and front-end/back-end architecture.
+I plan to expand this project further, including weather cards that change with the current weather conditions for example.
