@@ -1,6 +1,6 @@
 # WTWR (What to Wear) Project
 
-The WTWR (What to Wear) project is a React-based front-end application designed to help users choose appropriate clothing based on real-time weather data. This project includes features such as generating a set of clothing cards from a hard-coded array and integrating a weather API to display the current temperature and location. Users can interact with the application by viewing the current weather conditions and selecting garments that match the weather.
+The WTWR (What to Wear) project is a React-based application that helps users select suitable clothing based on real-time weather data. Users can securely sign up and sign in to access the app's features, including uploading and managing their clothing items. The app integrates with a weather API to display the current temperature and location, and dynamically filters clothing items based on the weather conditions. This ensures users are presented with a curated selection of appropriate clothing options directly on the main page.
 
 The site, now hosted on Google Cloud Services, integrates both front-end and back-end functionalities, with advanced middleware for error handling, data validation, and logging. Additionally, the project is secured using HTTPS, SSL, and Certbot, and employs PM2 and NGINX to ensure efficient and continuous operation.
 
