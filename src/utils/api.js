@@ -8,16 +8,6 @@ function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-/*function addItem({ name, imageUrl, weather }) {
-  return fetch(`${baseUrl}/items`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
-*/
-
 function addItem({ name, imageUrl, weather }, token) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
