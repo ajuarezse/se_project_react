@@ -24,7 +24,7 @@ export const signin = (email, password) => {
 };
 
 export const checkToken = (token) => {
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/api/users/me`, {
     method: "GET",
     headers: {
       Accept: "application/json",
