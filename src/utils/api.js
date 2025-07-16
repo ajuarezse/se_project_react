@@ -5,11 +5,11 @@ function checkResponse(res) {
 }
 
 function getItems() {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
+  return fetch(`${baseUrl}/api/items`).then(checkResponse);
 }
 
 function addItem({ name, imageUrl, weather }, token) {
-  return fetch(`${baseUrl}/items`, {
+  return fetch(`${baseUrl}/api/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,7 +24,7 @@ function addItem({ name, imageUrl, weather }, token) {
 }
 
 function deleteItem(id, token) {
-  return fetch(`${baseUrl}/items/${id}`, {
+  return fetch(`${baseUrl}/api/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function deleteItem(id, token) {
 }
 
 function editUserProfile({ name, avatar }, token) {
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/api/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

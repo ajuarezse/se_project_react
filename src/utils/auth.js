@@ -2,7 +2,7 @@ import { baseUrl } from "./constants";
 import { checkResponse } from "./api";
 
 export const signup = (newUser) => {
-  return fetch(`${baseUrl}/signup`, {
+  return fetch(`${baseUrl}/api/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -13,7 +13,7 @@ export const signup = (newUser) => {
 };
 
 export const signin = (email, password) => {
-  return fetch(`${baseUrl}/signin`, {
+  return fetch(`${baseUrl}/api/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
