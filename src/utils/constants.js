@@ -39,7 +39,7 @@ export const defaultClothingItems = [
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.wtwr.ftp.sh"
+    ? import.meta.env.VITE_API_URL
     : "http://localhost:3001";
 
 export const coordinates = {
