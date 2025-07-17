@@ -31,11 +31,7 @@ function ItemCard({ item, onCardLike, isLoggedIn, onCardClick }) {
       <h2 className={cardClassName}>
         {item.name}
         {isLoggedIn ? (
-          <button
-            className="card__like-button"
-            onClick={handleLike}
-            disabled={!isOwner}
-          >
+          <button className="card__like-button" onClick={handleLike}>
             <img
               src={buttonIcon}
               alt={isLiked ? "Unlike" : "Like"}

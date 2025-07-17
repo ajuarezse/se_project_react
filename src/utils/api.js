@@ -48,7 +48,7 @@ function editUserProfile({ name, avatar }, token) {
 }
 
 function addCardLike(id, token) {
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+  return fetch(`${baseUrl}/api/items/${id}/likes`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function addCardLike(id, token) {
 }
 
 function removeCardLike(id, token) {
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+  return fetch(`${baseUrl}/api/items/${id}/likes`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
