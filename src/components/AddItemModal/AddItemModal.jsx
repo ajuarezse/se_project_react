@@ -4,7 +4,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weather, setWeather] = useState("hot"); // Set default weather type
 
   const handleNameChange = (e) => {
     console.log(e.target.value);
@@ -30,6 +30,13 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
   useEffect(() => {
     if (isOpen) {
       resetForm();
+      // Get the currently checked radio button value
+      const checkedRadio = document.querySelector(
+        'input[name="weatherType"]:checked'
+      );
+      if (checkedRadio) {
+        setWeather(checkedRadio.value);
+      }
     }
   }, [isOpen]);
 
@@ -84,6 +91,7 @@ const AddItemModal = ({ isOpen, onClose, onAddItem }) => {
             className="modal__radio-input"
             onChange={handleWeatherChange}
             value="hot"
+            defaultChecked
           />
           Hot
         </label>
