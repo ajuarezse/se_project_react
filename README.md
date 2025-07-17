@@ -2,7 +2,7 @@
 
 The WTWR (What to Wear) project is a React-based application that helps users select suitable clothing based on real-time weather data. Users can securely sign up and sign in to access the app's features, including uploading and managing their clothing items. The app integrates with a weather API to display the current temperature and location, and dynamically filters clothing items based on the weather conditions. This ensures users are presented with a curated selection of appropriate clothing options directly on the main page.
 
-The site, now hosted on Google Cloud Services, integrates both front-end and back-end functionalities, with advanced middleware for error handling, data validation, and logging. Additionally, the project is secured using HTTPS, SSL, and Certbot, and employs PM2 and NGINX to ensure efficient and continuous operation.
+The site, now hosted on Vercel (previously Google Cloud Services), integrates both front-end and back-end functionalities, with advanced middleware for error handling, data validation, and logging. Additionally, the project is secured using HTTPS, SSL, and Certbot, and employs PM2 and NGINX to ensure efficient and continuous operation.
 
 # Key features include:
 
@@ -34,7 +34,7 @@ The site, now hosted on Google Cloud Services, integrates both front-end and bac
 
 - 🎨 **CSS**: Custom styling based on a provided Figma design.
 
-- 🌐 **Google Cloud Services**: Hosting both the front-end and back-end with subdomains for easy navigation.
+- 🌐 **Vercel**: Hosting both the front-end and back-end with custom subdomains for easy navigation.
 
 - 🚀 **PM2 and NGINX**: For process management and reverse proxy configuration.
 
@@ -48,7 +48,7 @@ The site, now hosted on Google Cloud Services, integrates both front-end and bac
 
 ## Links:
 
-- Visit the live site here: [wtwr.ftp.sh](https://wtwr.ftp.sh)
+- Visit the live site here: [wtwr.ftp.sh](https://wtwr.angeljuarez.dev)
 
 - Checkout the back-end: [Back-End -- Github Repo](https://github.com/ajuarezse/se_project_express)
 
