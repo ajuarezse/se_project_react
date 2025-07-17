@@ -48,7 +48,7 @@ The site, now hosted on Vercel (previously Google Cloud Services), integrates bo
 
 ## Links:
 
-- Visit the live site here: [wtwr.ftp.sh](https://wtwr.angeljuarez.dev)
+- Visit the live site here: [wtwr.angeljuarez.dev](https://wtwr.angeljuarez.dev)
 
 - Checkout the back-end: [Back-End -- Github Repo](https://github.com/ajuarezse/se_project_express)
 
