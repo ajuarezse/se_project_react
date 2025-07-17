@@ -25,12 +25,19 @@ function Main({
           &deg; {currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className="cards__list">
-          {clothingItems
-            .filter((item) => {
-              return item.weather === weatherData.type;
-            })
-            .map((item) => {
-              return (
+          {clothingItems.filter((item) => item.weather === weatherData.type)
+            .length === 0 ? (
+            <div className="cards__empty">
+              <p className="cards__empty-text">
+                {isLoggedIn
+                  ? "No items added yet. Click + to add your first clothing item!"
+                  : "Please log in or sign up to start adding clothing items."}
+              </p>
+            </div>
+          ) : (
+            clothingItems
+              .filter((item) => item.weather === weatherData.type)
+              .map((item) => (
                 <ItemCard
                   key={item._id}
                   item={item}
@@ -38,8 +45,8 @@ function Main({
                   onCardLike={onCardLike}
                   isLoggedIn={isLoggedIn}
                 />
-              );
-            })}
+              ))
+          )}
         </ul>
       </section>
     </main>
