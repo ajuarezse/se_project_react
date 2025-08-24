@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
+function getOptimizedAvatarUrl(url) {
+  if (!url) return "";
+  const cleanUrl = url.replace(/^https?:\/\//, "");
+  return `https://images.weserv.nl/?url=${cleanUrl}&w=40&h=40&fit=cover`;
+}
+
 function Header({
   handleRegisterModal,
   handleLogInModal,
@@ -52,8 +58,8 @@ function Header({
                 <p className="header__username">{currentUser?.name}</p>
                 {currentUser.avatar ? (
                   <img
-                    src={currentUser?.avatar}
-                    alt=" User avatar"
+                    src={getOptimizedAvatarUrl(currentUser?.avatar)}
+                    alt="User avatar"
                     className="header__avatar"
                   />
                 ) : (

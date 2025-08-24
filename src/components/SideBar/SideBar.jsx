@@ -3,6 +3,12 @@ import "./SideBar.css";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
+function getOptimizedAvatarUrl(url) {
+  if (!url) return avatar;
+  const cleanUrl = url.replace(/^https?:\/\//, "");
+  return `https://images.weserv.nl/?url=${cleanUrl}&w=100&h=100&fit=cover`;
+}
+
 function SideBar({ openEditProfileModal, handleSignOut }) {
   const currentUser = useContext(CurrentUserContext);
   return (
@@ -10,7 +16,7 @@ function SideBar({ openEditProfileModal, handleSignOut }) {
       <div className="sidebar">
         <img
           className="sidebar__avatar"
-          src={currentUser.avatar}
+          src={getOptimizedAvatarUrl(currentUser.avatar)}
           alt="default avatar"
         />
         <p className="sidebar__username">{currentUser?.name}</p>
