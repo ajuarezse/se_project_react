@@ -4,6 +4,13 @@ import likedIcon from "../../assets/Liked.svg";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserContext";
 
+function getOptimizedImageUrl(url) {
+  if (!url) return "";
+  // Remove protocol for weserv
+  const cleanUrl = url.replace(/^https?:\/\//, "");
+  return `https://images.weserv.nl/?url=${cleanUrl}&w=324&h=326&fit=cover`;
+}
+
 function ItemCard({ item, onCardLike, isLoggedIn, onCardClick }) {
   const currentUser = useContext(CurrentUserContext);
   const isLiked = Array.isArray(item.likes)
@@ -45,7 +52,7 @@ function ItemCard({ item, onCardLike, isLoggedIn, onCardClick }) {
       <img
         onClick={handleCardClick}
         className="card__image"
-        src={item.imageUrl}
+        src={getOptimizedImageUrl(item.imageUrl)}
         alt={item.name}
       />
     </li>
