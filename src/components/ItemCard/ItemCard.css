@@ -37,12 +37,13 @@
 }
 
 .card__image {
-  width: 100%;
-  border-radius: 20px;
-  border: 1px;
-  border-color: rgba(0, 0, 0, 0.3);
-  gap: 20px;
-  max-height: 326px;
+  width: 324px;
+  height: 326px;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #f3f3f3;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .card__like-button {

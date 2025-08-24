@@ -6,7 +6,6 @@ import CurrentUserContext from "../../contexts/CurrentUserContext/CurrentUserCon
 
 function getOptimizedImageUrl(url) {
   if (!url) return "";
-  // Remove protocol for weserv
   const cleanUrl = url.replace(/^https?:\/\//, "");
   return `https://images.weserv.nl/?url=${cleanUrl}&w=324&h=326&fit=cover`;
 }
@@ -54,6 +53,10 @@ function ItemCard({ item, onCardLike, isLoggedIn, onCardClick }) {
         className="card__image"
         src={getOptimizedImageUrl(item.imageUrl)}
         alt={item.name}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "/fallback-image.png";
+        }}
       />
     </li>
   );
