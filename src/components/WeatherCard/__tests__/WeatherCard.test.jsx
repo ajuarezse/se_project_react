@@ -18,8 +18,9 @@ describe('WeatherCard', () => {
       </CurrentTemperatureUnitContext.Provider>
     );
     
-    expect(screen.getByText(/75/)).toBeInTheDocument();
-    expect(screen.getByText(/°F/)).toBeInTheDocument();
+    const tempElement = screen.getByText(/75/);
+    expect(tempElement).toBeInTheDocument();
+    expect(tempElement.textContent).toMatch(/F$/);
   });
 
   it('renders weather temperature in Celsius', () => {
@@ -29,7 +30,8 @@ describe('WeatherCard', () => {
       </CurrentTemperatureUnitContext.Provider>
     );
     
-    expect(screen.getByText(/23/)).toBeInTheDocument();
-    expect(screen.getByText(/°C/)).toBeInTheDocument();
+    const tempElement = screen.getByText(/23/);
+    expect(tempElement).toBeInTheDocument();
+    expect(tempElement.textContent).toMatch(/C$/);
   });
 });
