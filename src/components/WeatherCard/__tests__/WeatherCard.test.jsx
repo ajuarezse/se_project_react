@@ -8,7 +8,8 @@ describe('WeatherCard', () => {
     temp: {
       F: 75,
       C: 23
-    }
+    },
+    condition: "clear"
   };
 
   it('renders weather temperature in Fahrenheit', () => {
