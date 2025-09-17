@@ -61,7 +61,7 @@ function WeatherCard({ weatherData }) {
       </p>
       <img
         src={getWeatherImage(weatherData.condition)}
-        alt={`${weatherData.condition} ${isNighttime() ? 'night' : 'day'}`}
+        alt={`${weatherData.condition} ${isNighttime() ? "night" : "day"}`}
         className="weather-card__image"
       />
     </section>
