@@ -1,6 +1,6 @@
 # WTWR (What to Wear) Project
 
-The WTWR (What to Wear) project is a React-based application that helps users select suitable clothing based on real-time weather data. Users can securely sign up and sign in to access the app's features, including uploading and managing their clothing items. The app integrates with a weather API to display the current temperature and location, and dynamically filters clothing items based on the weather conditions. This ensures users are presented with a curated selection of appropriate clothing options directly on the main page.
+The WTWR (What to Wear) project is a React-based application that helps users select suitable clothing based on real-time weather data. Users can securely sign up and sign in to access the app's features, including uploading and managing their clothing items. The app integrates with a weather API to display the current temperature and location, with smart weather visualization that adapts to both weather conditions and time of day. The interface dynamically filters clothing items based on the weather conditions and provides an intuitive, time-aware experience that helps users make better clothing choices throughout the day.
 
 The site, now hosted on Vercel (previously Google Cloud Services), integrates both front-end and back-end functionalities, with advanced middleware for error handling, data validation, and logging. Additionally, the project is secured using HTTPS, SSL, and Certbot, and employs PM2 and NGINX to ensure efficient and continuous operation.
 
@@ -8,7 +8,9 @@ The site, now hosted on Vercel (previously Google Cloud Services), integrates bo
 
 - 👕 **Clothing Cards**: Dynamically generated from a hard-coded array of data.
 
-- ☁️ **Weather API Integration**: Fetches and parsing data from a weather API to display real-time weather information.
+- ☁️ **Dynamic Weather Display**: Smart weather cards that adapt to both current conditions and time of day, showing appropriate day/night imagery for each weather state.
+
+- 🌗 **Time-Aware UI**: Automatic switching between day and night modes based on local time, enhancing visual context.
 
 - 🖱️ **Event Handling**: Implementing interactive modals for adding new garments and viewing garment details.
 
@@ -56,4 +58,9 @@ The site, now hosted on Vercel (previously Google Cloud Services), integrates bo
 
 ---
 
-I plan to expand this project further, including weather cards that change with the current weather conditions for example.
+# Future Plans
+
+- 🎨 Implement loading state animations
+- 📱 Improve mobile responsiveness
+- 💨 Display wind speed and humidity data
+- 📊 Implement usage analytics
