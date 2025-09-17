@@ -56,4 +56,8 @@ The site, now hosted on Vercel (previously Google Cloud Services), integrates bo
 
 ---
 
-I plan to expand this project further, including weather cards that change with the current weather conditions for example.
+# Future Plans
+
+- 💨 Display additional weather metrics (humidity, wind speed, UV index)
+- Add animations
+- 📱 Add mobile-responsive optimizations
